@@ -9,4 +9,12 @@ public class ProfilePage {
     public ProfilePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver; }
+
+    @FindBy(xpath = "//*[contains(@href, '/post')]")
+    private WebElement notionBtm;
+
+    public void clickNotionBtm(){
+        notionBtm.click();
+    }
+
 }
