@@ -27,7 +27,7 @@ public class LoginTest {
 
         /*тут будет наш тест*/
         profilePage.clickNotionBtm();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        profilePage.inputZametka("хочу деняк");
 
         //driver.quit();
         }
