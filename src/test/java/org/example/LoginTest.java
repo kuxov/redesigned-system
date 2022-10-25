@@ -28,7 +28,7 @@ public class LoginTest {
         /*тут будет наш тест*/
         profilePage.clickNotionBtm();
         profilePage.inputZametka("хочу деняк");
-
+        profilePage.setPushBtm();
         //driver.quit();
         }
 

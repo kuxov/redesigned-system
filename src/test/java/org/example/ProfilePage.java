@@ -17,11 +17,18 @@ public class ProfilePage {
     @FindBy(xpath = "//*[contains(@class, 'posting_itx emoji-tx h-mod js-ok-e js-posting-itx ok-posting-handler')]")
     private WebElement zametkaField;
 
+    @FindBy (xpath = "//*[contains(@data-l, 't,button.submit')]")
+    WebElement pushBtm;
+
     public void inputZametka(String passwd) {
         zametkaField.sendKeys(passwd); }
 
     public void clickNotionBtm(){
         notionBtm.click();
+    }
+
+    public void setPushBtm() {
+        pushBtm.click();
     }
 
 }
