@@ -13,15 +13,15 @@ public class ProfilePage {
     @FindBy(xpath = "//*[contains(@href, '/post')]")
     private WebElement notionBtm;
 
-    //@FindBy(xpath = "//*[@id=\"hook_Block_pfnull\"]/div[2]/div[1]/div/div/div[2]")
-    @FindBy(xpath = "//*[contains(@class, 'posting_itx emoji-tx h-mod js-ok-e js-posting-itx ok-posting-handler')]")
-    private WebElement zametkaField;
-
-    public void inputZametka(String passwd) {
-        zametkaField.sendKeys(passwd); }
+    @FindBy(xpath = "//*[contains(@class, 'user-link o')]")
+    private WebElement userName;
 
     public void clickNotionBtm(){
         notionBtm.click();
+    }
+    public String getUserName() {
+        String name = userName.getText();
+        return name;
     }
 
 }

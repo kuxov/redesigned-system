@@ -27,7 +27,9 @@ public class LoginTest {
 
         /*тут будет наш тест*/
         profilePage.clickNotionBtm();
-        profilePage.inputZametka("хочу деняк");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        String user = profilePage.getUserName();
+        Assert.assertEquals(ConfProperties.getProperty("name"), user);
 
         //driver.quit();
         }
