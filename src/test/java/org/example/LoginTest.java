@@ -1,5 +1,6 @@
 package org.example;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,6 +10,7 @@ public class LoginTest {
     public static LoginPage loginPage;
     public static ProfilePage profilePage;
     public static WebDriver driver;
+    @BeforeClass
    public static void setup() {
         System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty("chromedriver"));
         driver = new ChromeDriver();
@@ -20,7 +22,6 @@ public class LoginTest {
 
     @Test
     public void Test1() {
-        setup();
         loginPage.inputLogin(ConfProperties.getProperty("login"));
         loginPage.inputPasswd(ConfProperties.getProperty("password"));
         loginPage.clickLoginBtn();
@@ -33,7 +34,7 @@ public class LoginTest {
         String notion = profilePage.getNotionText();
         Assert.assertEquals(ConfProperties.getProperty("name"), user);
         Assert.assertEquals(ConfProperties.getProperty("notion"), notion);
-        //driver.quit();
+        driver.quit();
         }
 
 }
