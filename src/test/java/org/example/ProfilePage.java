@@ -9,9 +9,5 @@ public class ProfilePage {
     public ProfilePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver; }
-    @FindBy(xpath = "//*[@id=\"hook_Block_Navigation\"]/div/div/div[1]/a/div")
-    private WebElement userMenu;
-    public String getUserName() {
-        String userName = userMenu.getText();
-        return userName; }
+
 }

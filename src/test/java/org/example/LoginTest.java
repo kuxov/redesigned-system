@@ -19,22 +19,14 @@ public class LoginTest {
         driver.get(ConfProperties.getProperty("loginpage")); }
 
     @Test
-    public void invalidPassTest() {
-        setup();
-        loginPage.inputLogin(ConfProperties.getProperty("login"));
-        loginPage.inputPasswd("123456");
-        loginPage.clickLoginBtn();
-        Assert.assertEquals("Неправильно указан логин и/или пароль", loginPage.getErrMsg());
-        driver.quit();
-        }
-    @Test
-    public void loginTest() {
+    public void Test1() {
         setup();
         loginPage.inputLogin(ConfProperties.getProperty("login"));
         loginPage.inputPasswd(ConfProperties.getProperty("password"));
         loginPage.clickLoginBtn();
-        String user = profilePage.getUserName();
-        Assert.assertEquals("technoPol20 technoPol20", user);
+
+        /*тут будет наш тест*/
+
         driver.quit();
         }
 
