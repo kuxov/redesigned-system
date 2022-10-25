@@ -27,10 +27,12 @@ public class LoginTest {
 
         /*тут будет наш тест*/
         profilePage.clickNotionBtm();
-        profilePage.inputZametka("хочу деняк");
+        profilePage.inputZametka("hochy denyak");
         profilePage.setPushBtm();
         String user = profilePage.getUserName();
+        String notion = profilePage.getNotionText();
         Assert.assertEquals(ConfProperties.getProperty("name"), user);
+        Assert.assertEquals(ConfProperties.getProperty("notion"), notion);
         //driver.quit();
         }
 

@@ -23,6 +23,9 @@ public class ProfilePage {
     @FindBy (xpath = "//*[contains(@data-l, 't,button.submit')]")
     WebElement pushBtm;
 
+    @FindBy(xpath = "//*[contains(@class, 'media-text_cnt_tx emoji-tx textWrap')]")
+    WebElement notionText;
+
     public void inputZametka(String passwd) {
         zametkaField.sendKeys(passwd); }
 
@@ -32,6 +35,10 @@ public class ProfilePage {
     public String getUserName() {
         String name = userName.getText();
         return name;}
+    public String getNotionText() {
+        String notion = notionText.getText();
+        return notion;
+    }
 
 
         public void setPushBtm() {
