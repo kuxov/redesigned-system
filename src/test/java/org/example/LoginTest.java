@@ -26,8 +26,10 @@ public class LoginTest {
         loginPage.clickLoginBtn();
 
         /*тут будет наш тест*/
+        profilePage.clickNotionBtm();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        driver.quit();
+        //driver.quit();
         }
 
 }
