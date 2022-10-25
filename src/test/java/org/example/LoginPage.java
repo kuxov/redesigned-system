@@ -20,6 +20,8 @@ public class LoginPage {
     @FindBy (xpath = "//*[@id=\"field_password\"]")
     private WebElement passwdField;
 
+    @FindBy(xpath = "//*[contains(@class, 'input-e login_error')]")
+    private WebElement passErr;
     public void inputLogin(String login) {
         loginField.sendKeys(login); }
 
@@ -28,4 +30,9 @@ public class LoginPage {
 
     public void clickLoginBtn() {
         loginBtn.click(); }
+
+    public String getErrMsg(){
+        return passErr.getText();
+    }
+
 }
